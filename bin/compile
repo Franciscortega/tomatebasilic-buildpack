@@ -8,5 +8,5 @@ BP_DIR=$(cd "$(dirname "${0:-}")"; cd ..; pwd)
 
 echo "-----> Tomatebasilic buildpack for gdal "
 
-echo "export PYTHONPATH=\"$BUILD_DIR/.apt/usr/lib/python3/dist-packages/\"" >> "$BP_DIR/export"
-echo "export LD_LIBRARY_PATH=\"$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/blas/:/app/.apt/usr/lib/x86_64-linux-gnu/lapack/\"" >> "$BP_DIR/export"
+echo "export PYTHONPATH=\"$BUILD_DIR/.apt/usr/lib/python3/dist-packages/:$PYTHONPATH\"" >> "$BP_DIR/export"
+echo "export LD_LIBRARY_PATH=\"$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/blas/:/app/.apt/usr/lib/x86_64-linux-gnu/lapack/:$LD_LIBRARY_PATH\"" >> "$BP_DIR/export"
