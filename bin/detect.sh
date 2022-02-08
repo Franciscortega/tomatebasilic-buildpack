@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "Heroku"
+echo "Ovega Custom Buildpack"
 exit 0
