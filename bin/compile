@@ -1,11 +1,12 @@
 #!/bin/bash
 
-BUILD_DIR=${1:-}
-CACHE_DIR=${2:-}
-ENV_DIR=${3:-}
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+BP_DIR=$(cd "$(dirname "${0:-}")"; cd ..; pwd)
 
 
 echo "-----> Tomatebasilic buildpack for gdal "
 
-echo "export PYTHONPATH=\"/build/$UUID/.apt/usr/lib/python3/dist-packages/\""
-echo "LD_LIBRARY_PATH=\"/build/$UUID/.apt/usr/lib/x86_64-linux-gnu/blas/:/app/.apt/usr/lib/x86_64-linux-gnu/lapack/\""
+echo "export PYTHONPATH=\"$BUILD_DIR/.apt/usr/lib/python3/dist-packages/\"" >> "$BP_DIR/export"
+echo "export LD_LIBRARY_PATH=\"$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/blas/:/app/.apt/usr/lib/x86_64-linux-gnu/lapack/\"" >> "$BP_DIR/export"
