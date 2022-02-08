@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+
+
+echo "-----> Tomatebasilic buildpack for gdal "
+
+PYTHONPATH=/build/$UUID/.apt/usr/lib/python3/dist-packages/
+LD_LIBRARY_PATH=/build/$UUID/.apt/usr/lib/x86_64-linux-gnu/blas/:/app/.apt/usr/lib/x86_64-linux-gnu/lapack/
